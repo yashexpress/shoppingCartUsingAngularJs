@@ -1,0 +1,39 @@
+<div>
+<h1>{{titleMessage}}</h1>
+<div class ="col-md-4">
+    	<label>Customer name:</label>
+    	<h4>{{customer.fullName}}</h4>
+    </div>
+    <div class ="col-md-4">
+    	<label>Customer address: </label>
+    	<h4> {{customer.address}}</h4>
+    </div>
+    <div class ="col-md-4">
+    	<label>Customer paymentMethod:</label>
+    	<h4> {{customer.paymentMethod}}</h4>
+    </div>
+    
+    <div class="row">
+      <table class="table col-md-9 col-md-offset-3">
+        <tr>
+          <th>Product Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th class="quantity">quantity</th>
+          <th>Total</th>
+        </tr>
+        <tr ng-repeat="item in inventory">
+          <td>{{ item.itemName }}</td>
+          <td>{{ item.description }}</td>
+          <td>{{ item.price | currency }}</td>
+          <td><input type="number" ng-model="item.quantity" class="quantity"></td>
+          <td>{{ item.quantity * item.price | currency }}</td>
+          <td>
+            <button class="btn-default" ng-click="addItem(item)">Add to Cart</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <cart-totals options="ctrl.cartOptions"></cart-totals>
+    <h3>{{ getTotal() | currency }}</h3>
+</div>

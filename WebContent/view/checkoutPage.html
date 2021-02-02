@@ -1,0 +1,17 @@
+<div>
+<h2>{{titleMessage}}</h2>
+   <ul>
+      <li ng-repeat="item in cart">
+        <span>{{ item.quantity + ' x ' + item.itemName }}</span>
+        <button class="btn-warning btn-xs" ng-click="removeItem(item);">Remove Item</button>
+        </br>
+        </br>
+      </li>
+    </ul>
+    <!-- <div>
+    	<button class="btn-default" ng-click="getTotal()">Click To getTotal</button>
+    </div> -->
+    <!-- <cart-totals options="ctrl.cartOptions"></cart-totals>
+    <h3>{{ total | currency }}</h3> -->
+    <button class="btn-warning" ng-click="clearCart();">Clear Cart</button>   
+</div>

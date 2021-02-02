@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="lib/angular.min.js"></script> 
+    <script src="lib/angular-route.min.js "></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--  ShoppingCart app files -->
+	<script src="app/App.js"></script>
+	<script src="app/homePage.controller.js"></script>
+	<script src="app/shoppingPage.controller.js"></script>
+	<script src="app/checkoutPage.controller.js"></script>
+	<script src="app/cartTotals.controller.js"></script>
+	<script src="directive/cartTotals.directive.js"></script>
+	<script src="services/shoppingCart.service.js"></script>
+	
+  </head>
+  
+  <body ng-app="shoppingCartApp">
+    
+    <div class="container">
+    	<div class="row">
+    		<h1>BestShop.com</h1>
+    	</div>
+    	<div class="row">
+    		<ul class="nav nav-tabs nav-justified">
+    			<li><a href="#/">Home</a></li>
+    			<li><a href="#/shopping">Shopping</a></li>
+    			<li><a href="#/checkout">Checkout</a></li>
+    		</ul>
+    	</div>
+    	<div class="row">
+    		<ng-view></ng-view>
+    	</div>
+    </div>
+  </body>
+</html>
